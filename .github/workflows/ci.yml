@@ -36,3 +36,18 @@ jobs:
         with:
           name: dist
           path: dist # or path/to/artifact
+
+  deploy:
+    needs: build-and-test
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+        with:
+          artifact_name: dist
