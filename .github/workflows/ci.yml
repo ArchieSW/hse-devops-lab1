@@ -12,10 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install Dependencies
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      - name: Install Deps
         run: npm install
 
       - name: Format Check
