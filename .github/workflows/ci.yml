@@ -37,25 +37,25 @@ jobs:
           name: dist
           path: dist # or path/to/artifact
 
-  deploy-to-pages:
-    needs: build-and-test
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
-        with:
-          artifact_name: dist
-          token: ${{ secrets.TOKEN_GITHUB }}
+  #  deploy-to-pages:
+  #    needs: build-and-test
+  #
+  #    environment:
+  #      name: github-pages
+  #      url: ${{ steps.deployment.outputs.page_url }}
+  #
+  #    permissions:
+  #      pages: write # to deploy to Pages
+  #      id-token: write # to verify the deployment originates from an appropriate source
+  #
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Deploy to GitHub Pages
+  #        id: deployment
+  #        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+  #        with:
+  #          artifact_name: dist
+  #          token: ${{ secrets.TOKEN_GITHUB }}
 
   docker:
     runs-on: ubuntu-latest
