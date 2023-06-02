@@ -37,7 +37,7 @@ jobs:
           name: dist
           path: dist # or path/to/artifact
 
-  deploy:
+  deploy-to-pages:
     needs: build-and-test
 
     environment:
@@ -77,7 +77,7 @@ jobs:
 
   deploy-to-server:
     runs-on: 1522965-ck75569
-    needs: [ docker, build-and-test ]
+    needs: [docker, build-and-test]
     steps:
       - name: Run docker run
         run: docker run -p 8081:80 --name devops --pull=always devarchie/app:latest
