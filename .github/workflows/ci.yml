@@ -76,7 +76,7 @@ jobs:
           tags: devarchie/app:latest
 
   deploy-to-server:
-    runs-on: 1522965-ck75569
+    runs-on: self-hosted
     needs: [docker, build-and-test]
     steps:
       - name: Run docker run
