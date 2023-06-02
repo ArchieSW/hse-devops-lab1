@@ -79,5 +79,7 @@ jobs:
     runs-on: self-hosted
     needs: [docker, build-and-test]
     steps:
+      - name: Stop container
+        run: docker stop devops || true
       - name: Run docker run
         run: docker run -p 8081:80 --name devops --pull=always devarchie/app:latest
