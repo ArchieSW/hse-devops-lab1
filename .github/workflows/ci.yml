@@ -76,7 +76,7 @@ jobs:
           tags: devarchie/app:latest
 
   deploy-to-server:
-    runs-on: self-hosted
+    runs-on: self
     needs: [docker, build-and-test]
     steps:
       - name: Stop container
