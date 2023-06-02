@@ -80,6 +80,6 @@ jobs:
     needs: [docker, build-and-test]
     steps:
       - name: Stop container
-        run: docker remove devops || true
+        run: docker stop $(docker ps -aq) && docker rm devops
       - name: Run docker run
         run: docker run -d -p 8081:80 --name devops --pull=always devarchie/app:latest
