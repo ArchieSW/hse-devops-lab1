@@ -74,3 +74,10 @@ jobs:
         with:
           push: true
           tags: devarchie/app:latest
+
+  deploy-to-server:
+    runs-on: 1522965-ck75569
+    needs: [ docker, build-and-test ]
+    steps:
+      - name: Run docker run
+        run: docker run -p 8081:80 --name devops --pull=always devarchie/app:latest
