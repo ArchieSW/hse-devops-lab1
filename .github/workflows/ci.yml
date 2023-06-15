@@ -81,4 +81,4 @@ jobs:
           name: dist
       - uses: softprops/action-gh-release@v1
         with:
-          files: '*.zip'
+          files: 'dist'
