@@ -90,3 +90,4 @@ jobs:
       - uses: softprops/action-gh-release@v1
         with:
           files: '*.zip'
+          token: ${{ secrets.SUPER_SECRET_GITHUB }}
