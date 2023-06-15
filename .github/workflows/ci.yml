@@ -81,6 +81,10 @@ jobs:
           name: dist
       - name: ls
         run: ls -la
+      - name: mkdir
+        run: mkdir dist
+      - name: mv
+        run: mv assets index.html vite.svg built
       - name: zip
         run: zip -r dist.zip dist
       - uses: softprops/action-gh-release@v1
