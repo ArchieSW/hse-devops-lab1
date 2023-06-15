@@ -69,7 +69,7 @@ jobs:
         run: docker stop $(docker ps -aq) && docker rm devops
       - name: Run docker run
         run: docker run -d -p 8081:80 --name devops --pull=always devarchie/app:latest
-  
+
   release:
     runs-on: ubuntu-20.04
     needs: [build-and-test]
@@ -81,4 +81,4 @@ jobs:
           name: dist
       - uses: softprops/action-gh-release@v1
         with:
-          files: "*.zip"
+          files: '*.zip'
