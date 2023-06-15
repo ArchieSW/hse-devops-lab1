@@ -2,7 +2,6 @@
 
 ![image](https://github.com/ArchieSW/hse-devops-lab1/assets/47922037/77ea15cb-5a15-4d4b-be42-ddb1658b2d09)
 
-
 _Сделал:_
 
 - [x] сборка
